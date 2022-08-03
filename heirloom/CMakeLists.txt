@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.21)
 project(heirloom)
 
-find_package(glfw3 3.3 REQUIRED)
-find_package(glm REQUIRED)
-find_package(spdlog REQUIRED)
+#find_package(glfw3 3.3 REQUIRED)
+#find_package(glm REQUIRED)
+#find_package(spdlog REQUIRED)
 
 add_subdirectory(thirdparty/entt)
-#add_subdirectory(thirdparty/glfw)
-#add_subdirectory(thirdparty/glm)
-#add_subdirectory(thirdparty/spdlog)
+add_subdirectory(thirdparty/glfw)
+add_subdirectory(thirdparty/glm)
+add_subdirectory(thirdparty/spdlog)
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
@@ -109,7 +109,7 @@ add_library(heirloom
 
 target_include_directories(heirloom PRIVATE
         src
-#        thirdparty/spdlog/include
+        thirdparty/spdlog/include
         thirdparty/stb_image
         thirdparty/glad/include
         thirdparty/imgui
